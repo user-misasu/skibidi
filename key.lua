@@ -61,7 +61,7 @@ end)
 local keyInput = Instance.new("TextBox")
 keyInput.Size = UDim2.new(1, 0, 0.5, 0)
 keyInput.Position = UDim2.new(0, 0, 0, 0)
-keyInput.Text = "Enter the Key"
+keyInput.Text = "ENTER THE KEY"
 keyInput.TextColor3 = Color3.new(0, 0, 0)
 keyInput.BackgroundTransparency = 0.5
 keyInput.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -89,8 +89,8 @@ end)
 local getKeyButton = Instance.new("TextButton")
 getKeyButton.Size = UDim2.new(0.5, 0, 0.5, 0)
 getKeyButton.Position = UDim2.new(0.5, 0, 0.5, 0)
-getKeyButton.Text = "BUY KEY"
-getKeyButton.Parent = frame
+getKeyButton.Text = "Buy Key: https://discord.gg/BVKVN4887R"
+getKeyButton.Parent = frame    
 
 submitButton.MouseButton1Click:Connect(function()
     local enteredKey = keyInput.Text
@@ -101,5 +101,5 @@ submitButton.MouseButton1Click:Connect(function()
 end)
 
 getKeyButton.MouseButton1Click:Connect(function()
-    setclipboard("Stop")
+    setclipboard("X")
 end)
