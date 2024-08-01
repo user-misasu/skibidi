@@ -101,5 +101,5 @@ submitButton.MouseButton1Click:Connect(function()
 end)
 
 getKeyButton.MouseButton1Click:Connect(function()
-    setclipboard("StopX")
+    setclipboard("Stop")
 end)
