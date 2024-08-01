@@ -10,7 +10,7 @@ frame.Parent = screenGui
 local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1, 0, 0, 20)
 title.Position = UDim2.new(0, 0, 0, -20)
-title.Text = "GET KEY"
+title.Text = "KEY SYSTEM"
 title.TextColor3 = Color3.new(1, 1, 1)
 title.BackgroundColor3 = Color3.new(0, 0, 0)
 title.Parent = frame
@@ -89,7 +89,7 @@ end)
 local GetKeyButton = Instance.new("TextButton")
 GetKeyButton.Size = UDim2.new(0.5, 0, 0.5, 0)
 GetKeyButton.Position = UDim2.new(0.5, 0, 0.5, 0)
-GetKeyButton.Text = "Get Key"
+GetKeyButton.Text = "BUY KEY"
 GetKeyButton.Parent = frame
 --------------------------------------------------------------------------
 SubmitButton.MouseButton1Click:Connect(function()
@@ -101,5 +101,5 @@ SubmitButton.MouseButton1Click:Connect(function()
 end)
 
 GetKeyButton.MouseButton1Click:Connect(function()
- setclipboard("https://discord.com/invite/ztGPRf7Xza") 
+ setclipboard("Buy Key In My Discord. https://discord.gg/BVKVN4887R") 
 end)
