@@ -58,48 +58,48 @@ game:GetService("UserInputService").InputChanged:Connect(function(input)
     end
 end)
 
-local KeySystem = Instance.new("TextBox")
-KeySystem.Size = UDim2.new(1, 0, 0.5, 0)
-KeySystem.Position = UDim2.new(0, 0, 0, 0)
-KeySystem.Text = "Enter the Key"
-KeySystem.TextColor3 = Color3.new(0, 0, 0)
-KeySystem.BackgroundTransparency = 0.5
-KeySystem.BackgroundColor3 = Color3.new(1, 1, 1)
-KeySystem.TextWrapped = true
-KeySystem.Parent = frame
+local keyInput = Instance.new("TextBox")
+keyInput.Size = UDim2.new(1, 0, 0.5, 0)
+keyInput.Position = UDim2.new(0, 0, 0, 0)
+keyInput.Text = "Enter the Key"
+keyInput.TextColor3 = Color3.new(0, 0, 0)
+keyInput.BackgroundTransparency = 0.5
+keyInput.BackgroundColor3 = Color3.new(1, 1, 1)
+keyInput.TextWrapped = true
+keyInput.Parent = frame
 
-local SubmitButton = Instance.new("TextButton")
-SubmitButton.Size = UDim2.new(0.5, 0, 0.5, 0)
-SubmitButton.Position = UDim2.new(0, 0, 0.5, 0)
-SubmitButton.Text = "SUBMIT"
-SubmitButton.Parent = frame
+local submitButton = Instance.new("TextButton")
+submitButton.Size = UDim2.new(0.5, 0, 0.5, 0)
+submitButton.Position = UDim2.new(0, 0, 0.5, 0)
+submitButton.Text = "SUBMIT"
+submitButton.Parent = frame
 
-local CloseButton = Instance.new("TextButton")
-CloseButton.Size = UDim2.new(0, 20, 0, 20)
-CloseButton.Position = UDim2.new(1, -20, 0, 0)
-CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.new(1, 1, 1)
-CloseButton.BackgroundColor3 = Color3.new(1, 0, 0)
-CloseButton.Parent = frame
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0, 20, 0, 20)
+closeButton.Position = UDim2.new(1, -20, 0, 0)
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.new(1, 1, 1)
+closeButton.BackgroundColor3 = Color3.new(1, 0, 0)
+closeButton.Parent = frame
 
-CloseButton.MouseButton1Click:Connect(function()
+closeButton.MouseButton1Click:Connect(function()
     screenGui:Destroy()
 end)
 
-local GetKeyButton = Instance.new("TextButton")
-GetKeyButton.Size = UDim2.new(0.5, 0, 0.5, 0)
-GetKeyButton.Position = UDim2.new(0.5, 0, 0.5, 0)
-GetKeyButton.Text = "BUY KEY"
-GetKeyButton.Parent = frame
---------------------------------------------------------------------------
-SubmitButton.MouseButton1Click:Connect(function()
-    local KeySystem = KeySystem.Text
-    if KeySystem == "Keyformyscriptreallyproe123456789" then   
-      screenGui:Destroy() 
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/user-misasu/ChangingAnimation/main/Latest.lua"))()
-  end
+local getKeyButton = Instance.new("TextButton")
+getKeyButton.Size = UDim2.new(0.5, 0, 0.5, 0)
+getKeyButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+getKeyButton.Text = "BUY KEY"
+getKeyButton.Parent = frame
+
+submitButton.MouseButton1Click:Connect(function()
+    local enteredKey = keyInput.Text
+    if enteredKey == "Keyformyscriptreallyproe123456789" then
+        screenGui:Destroy()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/user-misasu/ChangingAnimation/main/Latest.lua"))()
+    end
 end)
 
-GetKeyButton.MouseButton1Click:Connect(function()
- setclipboard("StopX") 
+getKeyButton.MouseButton1Click:Connect(function()
+    setclipboard("StopX")
 end)
