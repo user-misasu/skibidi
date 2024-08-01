@@ -89,7 +89,7 @@ end)
 local getKeyButton = Instance.new("TextButton")
 getKeyButton.Size = UDim2.new(0.5, 0, 0.5, 0)
 getKeyButton.Position = UDim2.new(0.5, 0, 0.5, 0)
-getKeyButton.Text = "Key discord.gg/BVKVN4887R"
+getKeyButton.Text = "discord.gg/BVKVN4887R"
 getKeyButton.Parent = frame    
 
 submitButton.MouseButton1Click:Connect(function()
