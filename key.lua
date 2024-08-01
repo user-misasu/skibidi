@@ -1,1 +1,105 @@
-local _1=Instance.new("ScreenGui")_1.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui")local _2=Instance.new("Frame")_2.Size=UDim2.new(0,200,0,100)_2.Position=UDim2.new(0.5,-100,0.5,-50)_2.BackgroundColor3=Color3.new(1,1,1)_2.Parent=_1 local _3=Instance.new("TextLabel")_3.Size=UDim2.new(1,0,0,20)_3.Position=UDim2.new(0,0,0,-20)_3.Text="Universal Key System Script"_3.TextColor3=Color3.new(1,1,1)_3.BackgroundColor3=Color3.new(0,0,0)_3.Parent=_2 local _4 local _5 local _6 local _7 local function _8(_9)local _10=_9.Position-_6 _2.Position=UDim2.new(_7.X.Scale,_7.X.Offset+_10.X,_7.Y.Scale,_7.Y.Offset+_10.Y)end _3.InputBegan:Connect(function(_11)if _11.UserInputType==Enum.UserInputType.MouseButton1 or _11.UserInputType==Enum.UserInputType.Touch then _4=true _6=_11.Position _7=_2.Position _11.Changed:Connect(function()if _11.UserInputState==Enum.UserInputState.End then _4=false end end)end end) _3.InputChanged:Connect(function(_12)if _12.UserInputType==Enum.UserInputType.MouseMovement or _12.UserInputType==Enum.UserInputType.Touch then _5=_12 end end) _3.InputEnded:Connect(function(_13)if _13.UserInputType==Enum.UserInputType.MouseButton1 or _13.UserInputType==Enum.UserInputType.Touch then _4=false _5=nil end end) game:GetService("UserInputService").InputChanged:Connect(function(_14)if _14==_5 and _4 then _8(_14)end end) local _15=Instance.new("TextBox")_15.Size=UDim2.new(1,0,0.5,0)_15.Position=UDim2.new(0,0,0,0)_15.Text="Enter the Key"_15.TextColor3=Color3.new(0,0,0)_15.BackgroundTransparency=0.5 _15.BackgroundColor3=Color3.new(1,1,1)_15.TextWrapped=true _15.Parent=_2 local _16=Instance.new("TextButton")_16.Size=UDim2.new(0.5,0,0.5,0)_16.Position=UDim2.new(0,0,0.5,0)_16.Text="Submit"_16.Parent=_2 local _17=Instance.new("TextButton")_17.Size=UDim2.new(0,20,0,20)_17.Position=UDim2.new(1,-20,0,0)_17.Text="X"_17.TextColor3=Color3.new(1,1,1)_17.BackgroundColor3=Color3.new(1,0,0)_17.Parent=_2 _17.MouseButton1Click:Connect(function()_1:Destroy()end) local _18=Instance.new("TextButton")_18.Size=UDim2.new(0.5,0,0.5,0)_18.Position=UDim2.new(0.5,0,0.5,0)_18.Text="Get Key"_18.Parent=_2 _16.MouseButton1Click:Connect(function()local _19=_15.Text if _19=="120ei1oewqoei0wqo____woa29" then _1:Destroy()loadstring(game:HttpGet("https://raw.githubusercontent.com/user-misasu/ChangingAnimation/main/Latest.lua"))()end end) _18.MouseButton1Click:Connect(function()setclipboard("https://discord.com/invite/ztGPRf7Xza")end)
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 200, 0, 100)
+frame.Position = UDim2.new(0.5, -100, 0.5, -50)
+frame.BackgroundColor3 = Color3.new(1, 1, 1)
+frame.Parent = screenGui
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 20)
+title.Position = UDim2.new(0, 0, 0, -20)
+title.Text = "Universal Key System Script"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.BackgroundColor3 = Color3.new(0, 0, 0)
+title.Parent = frame
+
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+title.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = frame.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+title.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+title.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = false
+        dragInput = nil
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        update(input)
+    end
+end)
+
+local KeySystem = Instance.new("TextBox")
+KeySystem.Size = UDim2.new(1, 0, 0.5, 0)
+KeySystem.Position = UDim2.new(0, 0, 0, 0)
+KeySystem.Text = "Enter the Key"
+KeySystem.TextColor3 = Color3.new(0, 0, 0)
+KeySystem.BackgroundTransparency = 0.5
+KeySystem.BackgroundColor3 = Color3.new(1, 1, 1)
+KeySystem.TextWrapped = true
+KeySystem.Parent = frame
+
+local SubmitButton = Instance.new("TextButton")
+SubmitButton.Size = UDim2.new(0.5, 0, 0.5, 0)
+SubmitButton.Position = UDim2.new(0, 0, 0.5, 0)
+SubmitButton.Text = "Submit"
+SubmitButton.Parent = frame
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 20, 0, 20)
+CloseButton.Position = UDim2.new(1, -20, 0, 0)
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.new(1, 1, 1)
+CloseButton.BackgroundColor3 = Color3.new(1, 0, 0)
+CloseButton.Parent = frame
+
+CloseButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
+
+local GetKeyButton = Instance.new("TextButton")
+GetKeyButton.Size = UDim2.new(0.5, 0, 0.5, 0)
+GetKeyButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+GetKeyButton.Text = "Get Key"
+GetKeyButton.Parent = frame
+--------------------------------------------------------------------------
+SubmitButton.MouseButton1Click:Connect(function()
+    local KeySystem = KeySystem.Text
+    if KeySystem == "Keyformyscriptreallyproe123456789" then   
+      screenGui:Destroy() 
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/user-misasu/ChangingAnimation/main/Latest.lua"))()
+  end
+end)
+
+GetKeyButton.MouseButton1Click:Connect(function()
+ setclipboard("https://discord.com/invite/ztGPRf7Xza") 
+end)
