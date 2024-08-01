@@ -71,7 +71,7 @@ KeySystem.Parent = frame
 local SubmitButton = Instance.new("TextButton")
 SubmitButton.Size = UDim2.new(0.5, 0, 0.5, 0)
 SubmitButton.Position = UDim2.new(0, 0, 0.5, 0)
-SubmitButton.Text = "Submit"
+SubmitButton.Text = "SUBMIT"
 SubmitButton.Parent = frame
 
 local CloseButton = Instance.new("TextButton")
@@ -101,5 +101,5 @@ SubmitButton.MouseButton1Click:Connect(function()
 end)
 
 GetKeyButton.MouseButton1Click:Connect(function()
- setclipboard("Buy Key In My Discord. https://discord.gg/BVKVN4887R") 
+ setclipboard("") 
 end)
