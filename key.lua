@@ -2,13 +2,13 @@ local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 400, 0, 200)
+frame.Size = UDim2.new(0, 200, 0, 100)
 frame.Position = UDim2.new(0.5, -100, 0.5, -50)
 frame.BackgroundColor3 = Color3.new(0, 0, 0)
 frame.Parent = screenGui
 
 local title = Instance.new("TextLabel")
-title.Size = UDim2.new(2, 0, 0, 40)
+title.Size = UDim2.new(1, 0, 0, 40)
 title.Position = UDim2.new(0, 0, 0, -20)
 title.Text = "KEY SYSTEM"
 title.TextColor3 = Color3.new(1, 1, 1)
@@ -59,7 +59,7 @@ game:GetService("UserInputService").InputChanged:Connect(function(input)
 end)
 
 local keyInput = Instance.new("TextBox")
-keyInput.Size = UDim2.new(2, 0, 1, 0)
+keyInput.Size = UDim2.new(1, 0, 0.5, 0)
 keyInput.Position = UDim2.new(0, 0, 0, 0)
 keyInput.Text = "ENTER THE KEY"
 keyInput.TextColor3 = Color3.new(0, 0, 0)
@@ -69,7 +69,7 @@ keyInput.TextWrapped = true
 keyInput.Parent = frame
 
 local submitButton = Instance.new("TextButton")
-submitButton.Size = UDim2.new(1, 0, 1, 0)
+submitButton.Size = UDim2.new(0.5, 0, 0.5, 0)
 submitButton.Position = UDim2.new(0, 0, 0.5, 0)
 submitButton.Text = "SUBMIT"
 submitButton.Parent = frame
@@ -87,7 +87,7 @@ closeButton.MouseButton1Click:Connect(function()
 end)
 
 local getKeyButton = Instance.new("TextButton")
-getKeyButton.Size = UDim2.new(1, 0, 1, 0)
+getKeyButton.Size = UDim2.new(0.5, 0, 0.75, 0)
 getKeyButton.Position = UDim2.new(0.5, 0, 0.5, 0)
 getKeyButton.Text = "discord.gg/BVKVN4887R"
 getKeyButton.Parent = frame    
